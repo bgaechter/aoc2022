@@ -1,19 +1,9 @@
-use std::fs::File;
-use std::io::{self, BufRead};
-use std::path::Path;
-
-fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-where
-    P: AsRef<Path>,
-{
-    let file = File::open(filename)?;
-    Ok(io::BufReader::new(file).lines())
-}
+use aoc2022::utils;
 
 fn read_ints(path: &str) -> Vec<i32> {
     let mut elves: Vec<i32> = vec![0];
     let mut index: i32 = 0;
-    let lines = read_lines(path).unwrap();
+    let lines = utils::read_lines(path).unwrap();
 
     for line in lines {
         match line.unwrap().parse::<i32>() {
