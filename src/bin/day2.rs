@@ -81,7 +81,6 @@ impl Round {
 
 fn read_rounds(path: &str) {
     let lines = utils::read_lines(path).unwrap();
-    let rounds: Vec<Round> = Vec::new();
     let mut total_score: i32 = 0;
     let mut total_score_2: i32 = 0;
 
